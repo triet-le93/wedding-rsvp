@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  basePath: "/wedding-rsvp",
+  output: "export",
 };
 
 export default nextConfig;
