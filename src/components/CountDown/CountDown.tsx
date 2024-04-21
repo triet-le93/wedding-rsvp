@@ -6,10 +6,17 @@ interface CountDownProps {
   targetDate: string | number;
 }
 
+interface Time {
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
+}
+
 const CountDown: React.FC<CountDownProps> = ({ targetDate }) => {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
-    let timeLeft = {};
+    let timeLeft: Time = {};
 
     if (difference > 0) {
       timeLeft = {
