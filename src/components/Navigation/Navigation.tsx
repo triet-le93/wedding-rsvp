@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
+import Avatar from "@/components/Avatar/Avatar";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,8 @@ const Navigation: React.FC = () => {
     <nav className="w-full justify-between items-center shadow-wedding z-10 backdrop-blur-md bg-white/40 border-b border-gray-200/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-cyan-700 font-bold">Logo</div>
+          {/* <div className="text-cyan-700 font-bold">Logo</div> */}
+          <Avatar imgSrc={`${process.env.basePath}/images/logo.png`} isLogo={true} />
           <div className="md:hidden">
             <button onClick={handleClick} className="text-cyan-700 focus:outline-none">
               <svg

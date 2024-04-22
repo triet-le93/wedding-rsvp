@@ -2,11 +2,18 @@ import Image from "next/image";
 
 interface AvatarProps {
   imgSrc: string;
+  isLogo?: boolean
 }
 
-const Avatar: React.FC<AvatarProps> = ({ imgSrc }) => {
+const Avatar: React.FC<AvatarProps> = ({ imgSrc, isLogo = false }) => {
+  const imgClasses = [
+    "relative",
+    "text-center",
+    !isLogo ? "w-60 h-60 mb-4 md:w-80 md:h-80 md:mb-6" : "w-16 h-16"
+  ].filter(Boolean).join(" ");
+
   return (
-    <div className="w-60 h-60 mb-4 relative text-center md:w-80 md:h-80 md:mb-6">
+    <div className={imgClasses}>
       <Image
         src={imgSrc}
         alt="Avatar"
