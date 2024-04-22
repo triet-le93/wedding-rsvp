@@ -38,7 +38,7 @@ const config: Config = {
         "blur": "blur(20px)",
       },
       backgroundColor: {
-        "glass": "rgba(255, 255, 255, 0.1)",
+        "glass": "rgba(255, 255, 255, 0.4)",
       },
       backgroundImage: {
         "left-countdown-bg": `url(${process.env.NEXT_PUBLIC_BASE_PATH}/images/left_countdown.jpg)`,

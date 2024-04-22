@@ -10,7 +10,7 @@ const Navigation: React.FC = () => {
   }
 
   return (
-    <nav className="w-full justify-between items-center shadow-wedding z-10 backdrop-blur-md bg-white/10 border-b border-gray-200/10">
+    <nav className="w-full justify-between items-center shadow-wedding z-10 backdrop-blur-md bg-white/40 border-b border-gray-200/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="text-cyan-700 font-bold">Logo</div>
