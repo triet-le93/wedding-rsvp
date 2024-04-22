@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -10,12 +10,12 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="bg-wedding-bg w-full fixed top-0 shadow-lg z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="w-full justify-between items-center shadow-wedding z-10 backdrop-blur-md bg-white/10 border-b border-gray-200/10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-wedding-text font-bold">Logo</div>
+          <div className="text-cyan-700 font-bold">Logo</div>
           <div className="md:hidden">
-            <button onClick={handleClick} className="text-wedding-text focus:outline-none">
+            <button onClick={handleClick} className="text-cyan-700 focus:outline-none">
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -42,18 +42,18 @@ const Navigation = () => {
             </button>
           </div>
           <div className="hidden md:flex flex-grow items-center justify-end">
-            <a href="#" className="text-wedding-text px-4 py-2 font-satisfy">Home</a>
-            <a href="#" className="text-wedding-text px-4 py-2 font-satisfy">About</a>
-            <a href="#" className="text-wedding-text px-4 py-2 font-satisfy">Services</a>
-            <a href="#" className="text-wedding-text px-4 py-2 font-satisfy">Contact</a>
+            <a href="#" className="text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">Home</a>
+            <a href="#" className="text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">About</a>
+            <a href="#" className="text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">Services</a>
+            <a href="#" className="text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">Contact</a>
           </div>
         </div>
         {isOpen && (
           <div className="md:hidden mt-4 text-center">
-            <a href="#" className="block text-wedding-text px-4 py-2 font-satisfy">Home</a>
-            <a href="#" className="block text-wedding-text px-4 py-2 font-satisfy">About</a>
-            <a href="#" className="block text-wedding-text px-4 py-2 font-satisfy">Services</a>
-            <a href="#" className="block text-wedding-text px-4 py-2 font-satisfy">Contact</a>
+            <a href="#" className="block text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">Home</a>
+            <a href="#" className="block text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">About</a>
+            <a href="#" className="block text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">Services</a>
+            <a href="#" className="block text-cyan-700 px-4 py-2 font-satisfy hover:text-gray-600">Contact</a>
           </div>
         )}
       </div>

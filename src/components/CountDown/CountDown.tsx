@@ -1,76 +1,57 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import GlassCard from "@/components/GlassCard/GlassCard";
 
 interface CountDownProps {
+  title: string;
+  imgSrc: string;
   targetDate: string | number;
+  male: boolean;
 }
 
-interface Time {
-  days?: number;
-  hours?: number;
-  minutes?: number;
-  seconds?: number;
-}
-
-const CountDown: React.FC<CountDownProps> = ({ targetDate }) => {
-  const calculateTimeLeft = () => {
+const CountDown: React.FC<CountDownProps> = ({ title, imgSrc, targetDate, male }) => {
+  const calculateDayLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
-    let timeLeft: Time = {};
+    let dayLeft: number = 0;
 
     if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
+      dayLeft = Math.floor(difference / (1000 * 60 * 60 * 24));
     }
 
-    return timeLeft;
+    return dayLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [dayLeft, setDayLeft] = useState(calculateDayLeft());
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+  const dayLeftClasses = [
+    "text-xl",
+    "md:text-2xl",
+    "text-white",
+    "font-semibold",
+    "font-serif",
+    "text-center",
+    "rounded-lg",
+    "p-4",
+    male ? "bg-cyan-600" : "bg-rose-600/70"
+  ].filter(Boolean).join(" ");
 
-    return () => clearTimeout(timer);
-  });
-
+  const dayLeftTxtClasses = [
+    "p-4",
+    male ? "text-cyan-600" : "text-rose-600/70"
+  ].filter(Boolean).join(" ");
 
   return (
-    <div className="text-center font-dancing">
-      <h1 className="text-3xl md:text-4xl text-gray-800 font-semibold mb-4">Countdown</h1>
+    <GlassCard title={title} imgSrc={imgSrc} male={male} targetDate={targetDate}>
       <div className="flex justify-center">
-        <div className="bg-white shadow-lg rounded-lg p-4 mr-4">
-          <div className="text-3xl md:text-4xl text-gray-800 font-semibold">
-            {timeLeft.days}
+        <div className="bg-transparent rounded-lg p-4 text-center flex flex-row items-center justify-between">
+          <div className={dayLeftClasses}>
+            {dayLeft}
           </div>
-          <div className="text-gray-600">Days</div>
-        </div>
-        <div className="bg-white shadow-lg rounded-lg p-4 mr-4">
-          <div className="text-3xl md:text-4xl text-gray-800 font-semibold">
-            {timeLeft.hours}
-          </div>
-          <div className="text-gray-600">Hours</div>
-        </div>
-        <div className="bg-white shadow-lg rounded-lg p-4 mr-4">
-          <div className="text-3xl md:text-4xl text-gray-800 font-semibold">
-            {timeLeft.minutes}
-          </div>
-          <div className="text-gray-600">Minutes</div>
-        </div>
-        <div className="bg-white shadow-lg rounded-lg p-4">
-          <div className="text-3xl md:text-4xl text-gray-800 font-semibold">
-            {timeLeft.seconds}
-          </div>
-          <div className="text-gray-600">Seconds</div>
+          <div className={dayLeftTxtClasses}>ngày đếm ngược</div>
         </div>
       </div>
-    </div>
+    </GlassCard>
   );
 }
 

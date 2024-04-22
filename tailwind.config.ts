@@ -7,16 +7,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Define custom colors for your wedding theme
         "wedding-primary": "#4C7DF0", // Blue
         "wedding-secondary": "#FF6B81", // Pink
         "wedding-accent": "#06D6A0", // Green
         "wedding-text": "#333333", // Dark text
-        "wedding-bg": "#FDFDFD", // Light background
+        "wedding-bg": "#F4E2E2", // Light background
       },
       fontFamily: {
+        pacifico: ["Pacifico", "cursive"],
         satisfy: ["Satisfy", "cursive"],
-        dancing: ["Dancing Script", "cursive"],
       },
       fontSize: {
         "2xl": "1.75rem", // Increase default font sizes for headings
@@ -34,6 +33,19 @@ const config: Config = {
         "80": "20rem", // Customize spacing according to your layout needs
         "96": "24rem",
       },
+      backdropFilter: {
+        "none": "none",
+        "blur": "blur(20px)",
+      },
+      backgroundColor: {
+        "glass": "rgba(255, 255, 255, 0.1)",
+      },
+      backgroundImage: {
+        "left-countdown-bg": `url(${process.env.NEXT_PUBLIC_BASE_PATH}/images/left_countdown.jpg)`,
+        "right-countdown-bg": `url(${process.env.NEXT_PUBLIC_BASE_PATH}/images/right_countdown.jpg)`,
+        "countdown-bg": `url(${process.env.NEXT_PUBLIC_BASE_PATH}/images/countdown-bg.jpg)`,
+        "home-bg": `url(${process.env.NEXT_PUBLIC_BASE_PATH}/images/main_picture.JPG)`,
+      }
     },
   },
   plugins: [],

@@ -6,13 +6,13 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap"
+            rel="stylesheet"
+          />
+          {/* <link
             href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
             rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap"
-            rel="stylesheet"
-          />
+          /> */}
         </Head>
         <body>
           <Main />
