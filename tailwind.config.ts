@@ -21,6 +21,7 @@ const config: Config = {
         "2xl": "1.75rem", // Increase default font sizes for headings
         "3xl": "2.25rem",
         "4xl": "3rem",
+        "5xl": "3.5rem",
       },
       boxShadow: {
         "wedding": "0 0 10px rgba(0, 0, 0, 0.1)", // Add a subtle shadow for elegance

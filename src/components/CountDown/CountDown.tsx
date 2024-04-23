@@ -11,9 +11,11 @@ interface CountDownProps {
   male: boolean;
   locationName: string;
   location: string;
+  location2: string;
+  placeId: string;
 }
 
-const CountDown: React.FC<CountDownProps> = ({ title, imgSrc, targetDate, male, locationName, location }) => {
+const CountDown: React.FC<CountDownProps> = ({ title, imgSrc, targetDate, male, locationName, location, location2, placeId }) => {
   const calculateDayLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
     let dayLeft: number = 0;
@@ -41,11 +43,11 @@ const CountDown: React.FC<CountDownProps> = ({ title, imgSrc, targetDate, male, 
 
   const dayLeftTxtClasses = [
     "p-4",
-    male ? "text-cyan-600" : "text-rose-600/70"
+    male ? "text-cyan-600/50" : "text-rose-600/50"
   ].filter(Boolean).join(" ");
 
   return (
-    <GlassCard title={title} imgSrc={imgSrc} male={male} targetDate={targetDate} locationName={locationName} location={location}>
+    <GlassCard title={title} imgSrc={imgSrc} male={male} targetDate={targetDate} locationName={locationName} location={location} location2={location2} placeId={placeId}>
       <div className="flex justify-center">
         <div className="bg-transparent rounded-lg p-4 text-center flex flex-row items-center justify-between">
           <motion.div
