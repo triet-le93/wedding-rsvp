@@ -44,8 +44,8 @@ const GlassCard: React.FC<GlassCardProps> = ({ title, imgSrc, children, male, ta
       <motion.div
         ref={ref}
         className="w-full text-center"
-        initial={{ opacity: 0, y: 300 }}
-        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 300 }}
+        initial={{ opacity: 0, x: male ? 300 : -300 }}
+        animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : male ? 300 : - 300 }}
         transition={{ duration: 0.8, bounce: 0.4, type: "spring" }}
       >
         <MapContainer placeId={placeId} />
