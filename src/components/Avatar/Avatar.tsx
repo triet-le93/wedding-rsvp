@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 
 interface AvatarProps {
   imgSrc: string;
@@ -8,24 +6,16 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<AvatarProps> = ({ imgSrc, isLogo = false }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
 
   const imgClasses = [
     "relative",
     "text-center",
     !isLogo ? "w-full aspect-square overflow-hidden mb-4 md:mb-6" : "w-16 h-16",
-    "shadow-lg"
+    !isLogo ? "shadow-lg" : ""
   ].filter(Boolean).join(" ");
 
   return (
-    <motion.div
-      ref={ref}
-      className={imgClasses}
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0 }}
-      transition={{ duration: 0.8 }}
-    >
+    <div className={imgClasses}>
       <div className="relative w-full h-0 pb-[100%]">
         <Image
           src={imgSrc}
@@ -36,7 +26,7 @@ const Avatar: React.FC<AvatarProps> = ({ imgSrc, isLogo = false }) => {
           unoptimized
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
 

@@ -25,6 +25,7 @@ const config: Config = {
       },
       boxShadow: {
         "wedding": "0 0 10px rgba(0, 0, 0, 0.1)", // Add a subtle shadow for elegance
+        "outline": "0 0 20px rgba(255, 255, 255, 0.9)",
       },
       borderRadius: {
         "lg": "0.75rem", // Use slightly rounded corners for a softer look
