@@ -11,8 +11,10 @@ const RoundedAvatar: React.FC<RoundedAvatarProps> = ({ src, alt }) => {
       <Image
         src={src}
         alt={alt}
-        layout="fill"
+        layout="responsive"
         objectFit="cover"
+        width={100}
+        height={100}
         unoptimized
       />
     </div>

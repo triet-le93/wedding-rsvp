@@ -12,7 +12,7 @@ export default function Home() {
       <div className="w-full aspect-w-16 aspect-h-9 mb-4 relative">
         <motion.img
           className="w-full h-auto"
-          src={`${process.env.basePath}/images/main_picture.jpg`}
+          src={`${process.env.basePath}/images/cover.jpg`}
           alt="Home Image"
           width={100}
           height={30}

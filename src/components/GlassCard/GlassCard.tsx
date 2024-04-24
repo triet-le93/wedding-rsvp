@@ -62,8 +62,8 @@ const GlassCard: React.FC<GlassCardProps> = ({ male, targetDate, locationName, l
         </div>
       </div>
       <div className="w-full p-2 mb-2 text-center">
-        <p className={`text-lg mb-2 font-bold ${textColors[1 - +male]}`}><i className="fas fa-utensils" /> {locationName}</p>
-        <p className={`text-lg mb-2 font-bold ${textColors[1 - +male]}`}><i className="fas fa-clock" /> {displayDate}</p>
+        <p className={`text-lg md:text-xl mb-2 font-bold ${textColors[1 - +male]}`}><i className="fas fa-utensils" /> {locationName}</p>
+        <p className={`text-lg md:text-xl mb-2 font-bold ${textColors[1 - +male]}`}><i className="fas fa-clock" /> {displayDate}</p>
       </div>
       <div className="w-full p-2 flex flex-row items-center justify-between">
         <div className="items-center justify-center text-xs md:text-base">❤️🥳 Cả thế giới đã thả tim</div>
