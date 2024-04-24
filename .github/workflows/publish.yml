@@ -58,6 +58,8 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /wedding-rsvp
           NEXT_PUBLIC_GGM_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          NEXT_PUBLIC_FB_MESS_PER_1: ${{ secrets.FB_MESS_PER_1 }}
+          NEXT_PUBLIC_FB_MESS_PER_2: ${{ secrets.FB_MESS_PER_2 }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

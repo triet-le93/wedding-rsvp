@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.aspect-ratio-iframe {
+  position: relative;
+  width: 100%;
+  padding-top: 50%; /* Sets height to be half of width (aspect ratio 1:2) */
+}

@@ -16,6 +16,8 @@ const config: Config = {
       fontFamily: {
         pacifico: ["Pacifico", "cursive"],
         satisfy: ["Satisfy", "cursive"],
+        dancing: ["Dancing Script", "cursive"],
+        platypi: ["Platypi", "serif"],
       },
       fontSize: {
         "2xl": "1.75rem", // Increase default font sizes for headings

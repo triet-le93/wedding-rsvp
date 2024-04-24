@@ -7,7 +7,7 @@ interface RoundedAvatarProps {
 
 const RoundedAvatar: React.FC<RoundedAvatarProps> = ({ src, alt }) => {
   return (
-    <div className="w-12 h-12 relative rounded-full overflow-hidden">
+    <div className="w-12 h-12 relative rounded-full overflow-hidden flex-shrink-0">
       <Image
         src={src}
         alt={alt}
